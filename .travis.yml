@@ -4,7 +4,3 @@ rvm:
 
 before_script: 
   - psql -c 'create database eznote_test' -U postgres
-
-deploy: 
-  provider: heroku
-  api_key: ENV['EZNOTE_HEROKU_KEY']
