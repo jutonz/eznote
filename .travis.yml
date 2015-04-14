@@ -2,9 +2,10 @@ language: ruby
 rvm:
   - 2.1.5
 
-before_script: 
-  - psql -c 'create database eznote_test' -U postgres
-
 deploy:
   provider: heroku
   api_key: EZNOTE_HEROKU_KEY
+
+before_script: 
+  - psql -c 'create database eznote_test' -U postgres
+
