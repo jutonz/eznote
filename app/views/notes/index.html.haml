@@ -15,4 +15,4 @@
         %td= link_to 'Edit', edit_user_note_path(@current_user, note)
         %td= link_to 'Destroy', user_note_path(@current_user, note), method: :delete, data: { confirm: 'Are you sure?' }
 %br
-  = button_to 'New Note', new_user_note_path(@current_user), method: :get
+  = button_to 'New Note', new_user_note_path(@current_user), method: :get, class: 'btn btn-lg btn-primary btn-block'
