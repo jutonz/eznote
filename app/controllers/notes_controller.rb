@@ -4,12 +4,14 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
+    redirect_to login_path unless current_user.logged_in?
     @notes = Note.all
   end
 
   # GET /notes/1
   # GET /notes/1.json
   def show
+    @ Note = Note.find params[:note_id]
   end
 
   # GET /notes/new
