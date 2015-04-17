@@ -22,6 +22,7 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
+    @current_user = current_user
   end
 
   # POST /notes
@@ -45,7 +46,7 @@ class NotesController < ApplicationController
   def update
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to @note, notice: 'Note was successfully updated.' }
+        format.html { redirect_to root_url, notice: 'Note was successfully updated.' }
         format.json { render :show, status: :ok, location: @note }
       else
         format.html { render :edit }
@@ -72,6 +73,6 @@ class NotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
-      params.require(:note).permit(:text, :favorite?)
+      params.require(:note).permit(:text, :favorite)
     end
 end
