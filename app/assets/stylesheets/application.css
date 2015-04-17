@@ -16,7 +16,12 @@
  *= require rails_bootstrap_forms
  */
 
+ html, body {
+  height: 100%;
+ }
+
 .content {
   padding: 2em;
   text-align: center;
+  height: 100%;
 }
