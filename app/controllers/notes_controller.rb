@@ -5,18 +5,19 @@ class NotesController < ApplicationController
   # GET /notes.json
   def index
     redirect_to login_path unless current_user.logged_in?
-    @notes = Note.all
+    @notes = current_user.notes
   end
 
   # GET /notes/1
   # GET /notes/1.json
   def show
-    @ Note = Note.find params[:note_id]
+    @notes = Note.find_by :user_id, current_user.id
   end
 
   # GET /notes/new
   def new
-    @note = Note.new
+    # @current_user = User.find 2
+    @note = current_user.notes.build
   end
 
   # GET /notes/1/edit
@@ -26,11 +27,11 @@ class NotesController < ApplicationController
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(note_params)
+    @note = current_user.notes.build note_params
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Note was successfully created.' }
         format.json { render :show, status: :created, location: @note }
       else
         format.html { render :new }
