@@ -1,4 +1,5 @@
 .content
+  %p#notice= notice
   %h2 EzNote
   .actions 
     = button_to 'All', user_notes_path(@current_user), class: 'btn btn-lg btn-primary', method: :get
