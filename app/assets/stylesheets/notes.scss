@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #new_note {
-  
   height: 100%;
 
   .form-group {
@@ -20,5 +19,90 @@
 
   .checkbox {
     padding-top: 0.5em;
+  }
+}
+
+// .note-tab-column {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 100%;
+//   display: table;
+//   table-layout: fixed;
+//   padding-left: 0;
+//   list-style-type: none;
+
+//   .note-tab {
+//     display: table-row;
+//     vertical-align: middle;
+//     background-color: yellow;
+//     position: relative;
+//     margin-top: 40px;
+//     width: 4em;
+//     height: 2em;
+
+//     span {
+//       border: 1px solid black;
+//     }
+//   }
+// }
+
+ul.note-tab-column-left {
+  display: table;
+  table-layout: fixed;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  list-style-type: none;
+  padding-left: 0;
+
+  li.note-tab {
+    text-align: center;
+    display: table-row;
+    margin-top: 1em;
+
+    span.note-tab-content {
+      display: table-cell;
+      vertical-align: middle;
+
+      p.note-text {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        background: pink;
+      }
+    }
+  }
+}
+
+ul.note-tab-column-right {
+  display: table;
+  table-layout: fixed;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  list-style-type: none;
+  padding-left: 0;
+
+  li.note-tab {
+    text-align: center;
+    display: table-row;
+    margin-top: 1em;
+
+    span.note-tab-content {
+      display: table-cell;
+      vertical-align: middle;
+
+      p.note-text {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        background: pink;
+      }
+    }
   }
 }

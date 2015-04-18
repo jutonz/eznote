@@ -11,7 +11,7 @@ class NotesController < ApplicationController
   # GET /notes/1
   # GET /notes/1.json
   def show
-    @notes = Note.find_by :user_id, current_user.id
+    @notes = Note.find_by user_id: current_user.id
   end
 
   # GET /notes/new
