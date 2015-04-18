@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#note-text {
-  height: 100vh;
+#note_text {
+  height: 100%;
+}
+
+.control-label {
+  display: none;
+}
+
+form {
+  height: 100%;
+
+  .form-group {
+    height: 80%;
+  }
+}
+
+.checkbox {
+  padding-top: 0.5em;
 }
