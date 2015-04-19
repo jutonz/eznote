@@ -3,3 +3,5 @@
     - if note
       = link_to edit_user_note_path(current_user, note), method: :get do 
         %p.note-text= note.text[0..10]
+    - else 
+      %p.note-text= "&nbsp".html_safe
