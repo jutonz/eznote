@@ -18,7 +18,20 @@
 //= require bootstrap.min
 
 $(document).ready(function() {
-  $('p.note-text.no-bg').each(function() {
-    $(this).css('background-color', 'inherit');
+  $('p.note-text').each(function() {
+    if ($(this).hasClass('no-bg')) {
+      $(this).css('background-color', 'inherit');
+    } else {
+      $(this).animate({'padding-left': '2em'}, 'fast', function() {
+        $(this).animate({'padding-left': '0.5em'}, 'fast')
+      });
+    }
   });
+
+  // $('li.note-tab').each(function() {
+  //   var isNote = !$(this, 'p.note-text').hasClass('no-bg');
+  //   if (isNote) {
+  //     $(this).animate({'padding-left': '2em'}, 'slow');
+  //   }
+  // });
 });
