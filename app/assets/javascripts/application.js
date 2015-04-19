@@ -17,3 +17,8 @@
 //= require_tree .
 //= require bootstrap.min
 
+$(document).ready(function() {
+  $('p.note-text.no-bg').each(function() {
+    $(this).css('background-color', 'inherit');
+  });
+});
