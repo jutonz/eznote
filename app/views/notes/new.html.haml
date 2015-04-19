@@ -1,4 +1,1 @@
-= bootstrap_form_for [@current_user, @note] do |form|
-  = form.text_area :text, placeholder: 'An important note...'
-  = form.check_box :favorite
-  = form.submit 'Add note', class: 'btn btn-lg btn-primary btn-block'
+= render partial: 'notes/form', locals: { note: @note }

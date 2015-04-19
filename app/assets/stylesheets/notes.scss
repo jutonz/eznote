@@ -22,30 +22,25 @@
   }
 }
 
-// .note-tab-column {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   height: 100%;
-//   display: table;
-//   table-layout: fixed;
-//   padding-left: 0;
-//   list-style-type: none;
+form.note-form {
+  height: 100%;
 
-//   .note-tab {
-//     display: table-row;
-//     vertical-align: middle;
-//     background-color: yellow;
-//     position: relative;
-//     margin-top: 40px;
-//     width: 4em;
-//     height: 2em;
+  .form-group {
+    height: 80%;
+  }
 
-//     span {
-//       border: 1px solid black;
-//     }
-//   }
-// }
+  #note_text {
+    height: 100%;
+  }
+
+  .control-label {
+    display: none;
+  }
+
+  .checkbox {
+    padding-top: 0.5em;
+  }
+}
 
 ul.note-tab-column-left {
   display: table;
