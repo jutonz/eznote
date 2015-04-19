@@ -1,7 +1,7 @@
 = bootstrap_form_for @user, html: { class: 'form-signin' }, url: login_path do |form|
   %h2.form-signin-heading EzNote
   %h3.form-signin-heading Sign in to see your notes
-  = form.email_field :email, placeholder: 'bob@example.com'
-  = form.password_field :password
+  = form.email_field :email, placeholder: 'email'
+  = form.password_field :password, placeholder: 'password'
   = form.submit 'Sign in', class: 'bn btn-lg btn-primary btn-block signin-button'
-= button_to 'Or, sign up', signup_path, class: 'btn btn-block signup-button', method: :get
+= button_to 'Or sign up', signup_path, class: 'btn btn-block signup-button', method: :get
