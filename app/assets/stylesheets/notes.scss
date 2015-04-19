@@ -34,7 +34,6 @@ ul.note-tab-column {
   padding-left: 0;
 
   li.note-tab {
-    text-align: center;
     display: table-row;
     margin-top: 1em;
 
@@ -45,6 +44,8 @@ ul.note-tab-column {
       p.note-text {
         padding-top: 1em;
         padding-bottom: 1em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
         background: pink;
       }
     }
@@ -55,10 +56,12 @@ ul.note-tab-column-left {
   @extend .note-tab-column;
   top: 0;
   left: 0;
+  text-align: left;
 }
 
 ul.note-tab-column-right {
   @extend .note-tab-column;
   top: 0;
   right: 0;
+  text-align: right;
 }
