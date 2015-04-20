@@ -33,14 +33,6 @@ function bump(bumpee, by) {
   });
 }
 
-function slideIn(slidee, fromDirection) {
-  if (fromDirection === 'right') {
-    var paddingRight = slidee.css('padding-right');
-    slidee.css('padding-right', '20em');
-    slidee.animate({'padding-right': paddingRight}, 'fast');
-  }
-}
-
 $(document).ready(function() {
   $('p.note-text').each(function() {
     if ($(this).hasClass('no-bg')) {
@@ -56,11 +48,4 @@ $(document).ready(function() {
     }, function() { // mouse out
       $(this).animate({'padding-right': '-=2em'}, 'fast')
   });
-
-  // $('li.note-tab').each(function() {
-  //   var isNote = !$(this, 'p.note-text').hasClass('no-bg');
-  //   if (isNote) {
-  //     $(this).animate({'padding-left': '2em'}, 'slow');
-  //   }
-  // });
 });
