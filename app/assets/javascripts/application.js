@@ -19,19 +19,18 @@
 
 // Bump in direction (left or right) bythe specified amount,
 // then return to original position.
-function bump(bumpee, inDirection, by) {
-  // Achieve bump by increasing padding on opposite side.
-  if (inDirection === 'right') {
-    var prevPadding = bumpee.css('padding-right');
-    bumpee.animate({ 'padding-right': by }, 'fast', function() {
-      bumpee.animate({ 'padding-right': prevPadding }, 'fast');
-    });
-  } else if (inDirection === 'left') {
-    var prevPadding = bumpee.css('padding-left');
-    bumpee.animate({ 'padding-left': by }, 'fast', function() {
-      bumpee.animate({ 'padding-left': prevPadding }, 'fast');
-    });
+function bump(bumpee, by) {
+  var there = {
+    'padding-left': ['+=', by].join(''),
+    'padding-right': ['+=', by].join('')
   }
+  var backAgain = {
+    'padding-left': ['-=', by].join(''),
+    'padding-right': ['-=', by].join('')
+  }
+  bumpee.animate(there, 'fast', function() {
+    bumpee.animate(backAgain, 'fast');
+  });
 }
 
 function slideIn(slidee, fromDirection) {
@@ -47,7 +46,7 @@ $(document).ready(function() {
     if ($(this).hasClass('no-bg')) {
       $(this).css('background-color', 'inherit');
     } else {
-      bump($(this), 'left', '2em');
+      bump($(this), '1em');
     }
   });
 
