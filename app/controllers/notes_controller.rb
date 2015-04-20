@@ -16,7 +16,6 @@ class NotesController < ApplicationController
 
   # GET /notes/new
   def new
-    # @current_user = User.find 2
     @note = current_user.notes.build
   end
 

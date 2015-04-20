@@ -17,21 +17,28 @@
 //= require_tree .
 //= require bootstrap.min
 
-// Bump in direction (left or right) by
-// the specified amount, then return to
-// original position.
+// Bump in direction (left or right) bythe specified amount,
+// then return to original position.
 function bump(bumpee, inDirection, by) {
   // Achieve bump by increasing padding on opposite side.
-  if (inDirection === 'left') {
+  if (inDirection === 'right') {
     var prevPadding = bumpee.css('padding-right');
     bumpee.animate({ 'padding-right': by }, 'fast', function() {
       bumpee.animate({ 'padding-right': prevPadding }, 'fast');
-    })
-  } else if (inDirection === 'right') {
+    });
+  } else if (inDirection === 'left') {
     var prevPadding = bumpee.css('padding-left');
     bumpee.animate({ 'padding-left': by }, 'fast', function() {
       bumpee.animate({ 'padding-left': prevPadding }, 'fast');
-    })
+    });
+  }
+}
+
+function slideIn(slidee, fromDirection) {
+  if (fromDirection === 'right') {
+    var paddingRight = slidee.css('padding-right');
+    slidee.css('padding-right', '20em');
+    slidee.animate({'padding-right': paddingRight}, 'fast');
   }
 }
 
@@ -42,6 +49,13 @@ $(document).ready(function() {
     } else {
       bump($(this), 'left', '2em');
     }
+  });
+
+  $('p.note-text').hover( 
+    function() {    // mouse in
+      $(this).animate({'padding-right': '+=2em'}, 'fast')
+    }, function() { // mouse out
+      $(this).animate({'padding-right': '-=2em'}, 'fast')
   });
 
   // $('li.note-tab').each(function() {
