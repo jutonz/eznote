@@ -17,14 +17,30 @@
 //= require_tree .
 //= require bootstrap.min
 
+// Bump in direction (left or right) by
+// the specified amount, then return to
+// original position.
+function bump(bumpee, inDirection, by) {
+  // Achieve bump by increasing padding on opposite side.
+  if (inDirection === 'left') {
+    var prevPadding = bumpee.css('padding-right');
+    bumpee.animate({ 'padding-right': by }, 'fast', function() {
+      bumpee.animate({ 'padding-right': prevPadding }, 'fast');
+    })
+  } else if (inDirection === 'right') {
+    var prevPadding = bumpee.css('padding-left');
+    bumpee.animate({ 'padding-left': by }, 'fast', function() {
+      bumpee.animate({ 'padding-left': prevPadding }, 'fast');
+    })
+  }
+}
+
 $(document).ready(function() {
   $('p.note-text').each(function() {
     if ($(this).hasClass('no-bg')) {
       $(this).css('background-color', 'inherit');
     } else {
-      $(this).animate({'padding-left': '2em'}, 'fast', function() {
-        $(this).animate({'padding-left': '0.5em'}, 'fast')
-      });
+      bump($(this), 'left', '2em');
     }
   });
 
