@@ -41,9 +41,6 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails', '2.2.8'
 gem 'bootstrap_form'
 
-# Use JQuery
-gem 'jquery-rails'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
