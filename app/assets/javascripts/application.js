@@ -57,7 +57,7 @@ $(document).ready(function() {
   })
 
   $('#fav-button').click(function (event) {
-    event.preventDefault(); // Prevent link from following its href
+    // event.preventDefault(); // Prevent link from following its href
     if ($(this).hasClass('back')) { 
       $('.note-tab-column-left').animate({ width: $('.note-tab-column-left').data('width') }, 'slow');
       $('.note-tab-column-right').animate({ width: $('.note-tab-column-left').data('width') }, 'slow')
