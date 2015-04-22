@@ -1,16 +1,5 @@
+%h1 Notes
 %p#notice= notice
-%h1 Listing Notes
-%table
-  %thead
-    %tr
-      %th Text
-      %th Favorite?
-      %th{:colspan => "3"}
-  %tbody
-    - @notes.each do |note|
-      %tr
-        %td= note.text
-        %td= note.favorite?
-        %td= link_to 'Edit', edit_user_note_path(@current_user, note)
-%br
-  = button_to 'New Note', new_user_note_path(@current_user), method: :get, class: 'btn btn-lg btn-primary btn-block'
+= button_to 'New Note', new_user_note_path(@current_user), method: :get, class: 'btn btn-lg btn-primary btn-block'
+- @notes.reverse.each do |note|
+  = render note
