@@ -36,7 +36,6 @@ function bump(bumpee, by) {
 $(document).ready(function() {
   $('p.note-text').each(function() {
     if ($(this).hasClass('no-bg')) {
-      // $(this).css('background-color', 'inherit');
     } else {
       bump($(this), '1em');
     }
@@ -58,7 +57,6 @@ $(document).ready(function() {
   })
 
   $('#fav-button').click(function (event) {
-    // alert('Hooray!');
     event.preventDefault(); // Prevent link from following its href
     if ($(this).hasClass('back')) { 
       $('.note-tab-column-left').animate({ width: $('.note-tab-column-left').data('width') }, 'slow');
