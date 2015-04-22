@@ -75,8 +75,4 @@ $(document).ready(function() {
       $(this).addClass('back');
     }
   });
-
-  $('#fav-button.back').click(function (event) {
-
-  })
 });
