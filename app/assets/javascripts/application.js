@@ -69,7 +69,9 @@ $(document).ready(function() {
       // var width = $(this)
       $('.note-tab-column-left').data('width', $('.note-tab-column-left').css('width'));
       $('.main-content').data('height', $('.main-content').css('height'));    
-      $('.main-content').animate({ opacity: '0', height: '95%' }, 'slow');
+      $('.main-content').animate({ opacity: '0' }, 'fast', function() {
+        $('.main-content').animate({ height: '95%' }, 'slow');
+      });
       $('.note-tab-column-left').animate({ width: '45%' }, 'slow');
       $('.note-tab-column-right').animate({ width: '45%' }, 'slow');
       $(this).addClass('back');
