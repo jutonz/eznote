@@ -60,15 +60,21 @@ $(document).ready(function() {
     // event.preventDefault(); // Prevent link from following its href
     if ($(this).hasClass('back')) { 
       $('.note-tab-column-left').animate({ width: $('.note-tab-column-left').data('width') }, 'slow');
-      $('.note-tab-column-right').animate({ width: $('.note-tab-column-left').data('width') }, 'slow')
-      $('.main-content').animate({ opacity: '1', height: $('.main-content').data('height') }, 'slow');
+      $('.note-tab-column-right').animate({ width: $('.note-tab-column-left').data('width') }, 'slow');
+      var mainContentStuff = {
+        height: $('.main-content').data('height')
+      , 'margin-bottom': $('.main-content').data('margin-bottom')
+      };
+      $('.main-content').animate(mainContentStuff, 'slow', function() {
+        $('.main-content').animate({ opacity: '1' }, 'fast');
+      });
       $(this).removeClass('back');
     } else {
-      // var width = $(this)
       $('.note-tab-column-left').data('width', $('.note-tab-column-left').css('width'));
       $('.main-content').data('height', $('.main-content').css('height'));    
       $('.main-content').animate({ opacity: '0' }, 'fast', function() {
-        $('.main-content').animate({ height: '95%' }, 'slow');
+        $('.main-content').data('margin-bottom', $('.main-content').css('margin-bottom'));
+        $('.main-content').animate({ height: '95%' , 'margin-bottom': '0' }, 'slow');
       });
       $('.note-tab-column-left').animate({ width: '45%' }, 'slow');
       $('.note-tab-column-right').animate({ width: '45%' }, 'slow');
