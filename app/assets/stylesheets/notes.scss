@@ -52,6 +52,9 @@ ul.note-tab-column {
           padding-left: 0.5em;
           padding-right: 0.5em;
           background: #FFCF3A;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
       }
     }

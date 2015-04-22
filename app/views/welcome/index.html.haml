@@ -1,10 +1,12 @@
 .content
-  %h2 EzNote
-  .actions 
-    = button_to 'All', user_notes_path(@current_user), class: 'btn btn-lg btn-primary', method: :get
-    = button_to 'New', new_user_note_path(@current_user), class: 'btn btn-lg btn-primary', method: :get
-    = button_to 'Favorites', root_url, class: 'btn btn-lg btn-primary', method: :get
-    = button_to 'Logout', logout_path, method: 'delete', class: 'btn btn-lg btn-primary'
+  .main-content
+    %h2 EzNote
+    .actions 
+      = button_to 'All', user_notes_path(@current_user), class: 'btn btn-lg btn-primary', method: :get
+      = button_to 'New', new_user_note_path(@current_user), class: 'btn btn-lg btn-primary', method: :get
+      = button_to 'Favorites', root_url, class: 'btn btn-lg btn-primary', method: :get
+      = button_to 'Logout', logout_path, method: 'delete', class: 'btn btn-lg btn-primary'
+  = button_to 'favs', root_url, method: :get, class: 'btn btn-lg btn-primary', id: 'fav-button'
   %ul.note-tab-column-left
     - left_notes.each do |note|
       = render partial: 'notes/note_tab', locals: { note: note }

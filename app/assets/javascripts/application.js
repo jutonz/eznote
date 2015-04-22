@@ -36,7 +36,7 @@ function bump(bumpee, by) {
 $(document).ready(function() {
   $('p.note-text').each(function() {
     if ($(this).hasClass('no-bg')) {
-      $(this).css('background-color', 'inherit');
+      // $(this).css('background-color', 'inherit');
     } else {
       bump($(this), '1em');
     }
@@ -48,4 +48,34 @@ $(document).ready(function() {
     }, function() { // mouse out
       $(this).animate({'padding-right': '-=2em'}, 'fast')
   });
+
+  $('p.note-text').first(function() {
+    var height = $(this).css('height');
+    $('p.note-text.no-bg').each(function() {
+      $(this).css('height', height);
+      console.log('hello')
+    })
+  })
+
+  $('#fav-button').click(function (event) {
+    // alert('Hooray!');
+    event.preventDefault(); // Prevent link from following its href
+    if ($(this).hasClass('back')) { 
+      $('.note-tab-column-left').animate({ width: $(this).data('width') }, 'slow');
+      $('.note-tab-column-right').animate({ width: $(this).data('width') }, 'slow')
+      $('.main-content').animate({ opacity: '1' }, 'slow');
+      $(this).removeClass('back');
+    } else {
+      // var width = $(this)
+      $(this).data('width', $(this).css('width'));      
+      $('.main-content').animate({ opacity: '0' }, 'slow');
+      $('.note-tab-column-left').animate({ width: '45%' }, 'slow');
+      $('.note-tab-column-right').animate({ width: '45%' }, 'slow');
+      $(this).addClass('back');
+    }
+  });
+
+  $('#fav-button.back').click(function (event) {
+
+  })
 });

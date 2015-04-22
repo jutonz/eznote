@@ -18,10 +18,19 @@
 
  html, body {
   height: 100%;
+
+  .content {
+    padding: 2em;
+    text-align: center;
+    height: 100%;
+
+    .main-content {
+      // height: 100%;
+
+      .actions {
+        // height: 90%;
+      }
+    }
+  }
  }
 
-.content {
-  padding: 2em;
-  text-align: center;
-  height: 100%;
-}
