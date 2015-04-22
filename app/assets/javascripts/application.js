@@ -61,14 +61,15 @@ $(document).ready(function() {
     // alert('Hooray!');
     event.preventDefault(); // Prevent link from following its href
     if ($(this).hasClass('back')) { 
-      $('.note-tab-column-left').animate({ width: $(this).data('width') }, 'slow');
-      $('.note-tab-column-right').animate({ width: $(this).data('width') }, 'slow')
-      $('.main-content').animate({ opacity: '1' }, 'slow');
+      $('.note-tab-column-left').animate({ width: $('.note-tab-column-left').data('width') }, 'slow');
+      $('.note-tab-column-right').animate({ width: $('.note-tab-column-left').data('width') }, 'slow')
+      $('.main-content').animate({ opacity: '1', height: $('.main-content').data('height') }, 'slow');
       $(this).removeClass('back');
     } else {
       // var width = $(this)
-      $(this).data('width', $(this).css('width'));      
-      $('.main-content').animate({ opacity: '0' }, 'slow');
+      $('.note-tab-column-left').data('width', $('.note-tab-column-left').css('width'));
+      $('.main-content').data('height', $('.main-content').css('height'));    
+      $('.main-content').animate({ opacity: '0', height: '95%' }, 'slow');
       $('.note-tab-column-left').animate({ width: '45%' }, 'slow');
       $('.note-tab-column-right').animate({ width: '45%' }, 'slow');
       $(this).addClass('back');
