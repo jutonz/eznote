@@ -1,5 +1,4 @@
-%h1 Notes
-%p#notice= notice
+%h1 All notes
 = button_to 'New Note', new_user_note_path(@current_user), method: :get, class: 'btn btn-lg btn-primary btn-block'
 - @notes.reverse.each do |note|
   = render note
