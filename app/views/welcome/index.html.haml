@@ -2,7 +2,7 @@
   .main-content
     %h2 EzNote
     .actions 
-      = button_to 'All', user_notes_path(@current_user), class: 'btn btn-lg btn-primary', method: :get
+      = button_to 'All', notes_path, class: 'btn btn-lg btn-primary', method: :get
       = button_to 'New', new_user_note_path(@current_user), class: 'btn btn-lg btn-primary', method: :get
       = button_to 'Favorites', favorites_path, class: 'btn btn-lg btn-primary', method: :get
       = button_to 'Logout', logout_path, method: 'delete', class: 'btn btn-lg btn-primary'

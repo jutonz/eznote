@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete '/logout',    to: 'sessions#destroy'
 
   get    '/favorites', to: 'notes#index_favorites'
+  get    '/notes',     to: 'notes#index'
 
   root 'welcome#index'
 
