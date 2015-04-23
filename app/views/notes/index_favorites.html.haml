@@ -1,5 +1,4 @@
 %h1 Favorites
-%p#notice= notice
 = button_to 'New Note', new_user_note_path(@current_user), method: :get, class: 'btn btn-lg btn-primary btn-block'
 - @favorites.reverse.each do |note|
   = render note
