@@ -7,6 +7,7 @@ class NotesController < ApplicationController
   def index
     redirect_to login_path unless current_user.logged_in?
     @notes = current_user.notes
+    @favorites = current_user.notes.find_by favorite: true
   end
 
   # GET /notes/1
